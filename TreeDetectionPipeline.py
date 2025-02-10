@@ -86,8 +86,6 @@ model.save
 
 # # **Evaluate model performance**
 metrics = model.val(split = 'test')
-metrics.box.f1
-
 
 # # **Make Predictions on Test Images**
 def tree_detect(img_path):
