@@ -30,4 +30,7 @@ To run:
 - set file path l23 for images and labels folders to be stored
 
 other things to set — path to image with labels l88 and path to padded image with labels l119
-will need to have matplotlib, imageio, numpy
+
+
+
+note: will need to have installed matplotlib, imageio, numpy
