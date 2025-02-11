@@ -1,6 +1,6 @@
 # delineate-tree-crowns
 
-TreeDetectionPipeline.py — Python script to train and evaluate model
+**TreeDetectionPipeline.py** — Python script to train and evaluate model
 
 To run: 
 
@@ -16,7 +16,7 @@ To run:
 
 
 
-DataProcessing.py — Python script to process and tile image and annotations
+**DataProcessing.py** — Python script to process and tile image and annotations
 
 To run: 
 
