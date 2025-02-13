@@ -33,5 +33,6 @@ other things to set — path to image with labels l88 and path to padded image w
 
 
 
-note: will need to have installed matplotlib, imageio, numpy
-I think you have to have annotations.shp as well and in same directory as annotations.shx
+note: 
+- will need to have installed matplotlib, imageio, numpy
+- I think you have to have annotations.shp as well and in same directory as annotations.shx
