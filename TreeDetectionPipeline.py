@@ -31,6 +31,15 @@ test_labels = test_images.replace("images", "labels")
 val_images = paths_loaded.get('val')
 val_labels = val_images.replace("images", "labels")
 
+# # **Setting Hyperparameters from YAML File**
+with open('/datalake/fdavis/Trees/hyperparameters.yaml', 'r') as stream:
+    hyperparameters = yaml.safe_load(stream)
+
+hyperparameters["data"] = path 
+##alreadys set in hyperparameters.yaml but maybe would be better to set here?
+
+print(hyperparameters)
+
 
 # # **Method to Display Train Images With Labels**
 def display_train(num_images = 9):
@@ -73,19 +82,17 @@ display_train()
 # # **Load pretrained model**
 model = YOLO('yolov8x.pt')
 
+#can also add 'weights': 'yolov8x.pt' to hyperparameters.yaml
 
 # #** Train Model**
-model.train(data = path,
-            epochs = 300,
-            imgsz = 768,
-            seed = 3,
-            batch = 2,
-            workers = 4
-            )
+model.train(**hyperparameters)
 model.save
 
 # # **Evaluate model performance**
-metrics = model.val(split = 'test')
+metrics = model.val(split = 'test',
+                    project = 'test_directory',
+                    name = 'test_val_experiment_name_dict'
+                   )
 
 # # **Make Predictions on Test Images**
 def tree_detect(img_path):

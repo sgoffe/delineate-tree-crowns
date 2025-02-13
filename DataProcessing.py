@@ -15,14 +15,14 @@ import geopandas as gpd
 from shapely.geometry import Polygon, MultiPolygon
 
 # # **To Be Set**
-forest_file = iio.imread(uri="/content/drive/MyDrive/ForestDataProcessing_Establishing_Pipeline/FOrest.tif")
-labels = gpd.read_file("/content/drive/MyDrive/ForestDataProcessing_Establishing_Pipeline/labels_new_shape.shx")
-min_x, min_y, max_x, max_y = 2197542.7702999999746680, 2446796.9078999999910593, 2197608.9882000000216067, 2446727.3396999998949468
+forest_file = iio.imread(uri="/datalake/fdavis/Trees/FL0_16_NORTH_CLIP.tif")
+labels = gpd.read_file("/datalake/fdavis/Trees/north_annotations.shx")
+min_x, min_y, max_x, max_y = 2141169.4391999999061227,2497501.6734000002034009, 2141305.2206999999471009, 2497437.9037999999709427
 
 tile_dimensions = 768
 
-subset = "section1"
-file_path = "/content/drive/MyDrive/folder_to_put_tiles_in_2/"
+subset = "section5north"
+file_path = "/datalake/fdavis/Trees/section5north_dataprocessingscript/"
 # # **To Be Set**
 
 def normalize(forest):
